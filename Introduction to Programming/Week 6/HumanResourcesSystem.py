@@ -1,4 +1,4 @@
-with open('hr_system.txt') as informations_file:
+with open('c:\\Users\\NOTEBOOK\\Desktop\\BYU-I\\Intro to Python Development\\Introduction to Programming\\Week 6\\HrSystem.txt') as informations_file:
     for line in informations_file:
         parts = line.split()
         name = parts[0]

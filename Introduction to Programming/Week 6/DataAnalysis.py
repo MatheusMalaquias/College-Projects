@@ -17,7 +17,7 @@ while True:
     else:
         print("Please enter a valid 4-digits year. ")
 
-with open ('life-expectancy.csv') as data_analysis:
+with open ('c:\\Users\\NOTEBOOK\\Desktop\\BYU-I\\Intro to Python Development\\Introduction to Programming\\Week 6\\LifeExpectancy.csv') as data_analysis:
     next(data_analysis)
     for item in data_analysis:
         parts = item.split(',')
