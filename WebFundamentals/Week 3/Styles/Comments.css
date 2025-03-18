@@ -1,0 +1,28 @@
+/*Universal - Applies to all elements*/
+/* *{...} */
+
+/*Type - Applies do all <h1> elements*/
+/* h1{...} */ 
+
+/*Class - Applies to all elements with the "red" class value*/
+/* .red{...} */
+
+/*ID - Applies to the one element with the "red" id value*/
+/* #red{...} */
+
+.note {
+    font-style: italic;
+    font-weight: bold;
+    color: navy;
+}
+  
+.editorial {
+    background: rgb(255 0 0 / 0.2);
+    padding: 10px;
+}
+
+#highlight {
+    text-decoration: underline;
+    background-color: lightyellow;
+    padding: 1rem;
+}
