@@ -24,7 +24,8 @@ h1 {
 }
 
 form {
-    width: 650px;
+    max-width: 650px;
+    width: 100%;
     margin: 0 auto;
     padding: 1rem;
     border: 1px solid rgb(0 0 0 / 0.1);
@@ -35,30 +36,36 @@ form {
 
 fieldset {
     display: grid;
-    grid-gap: .5rem;
+    grid-gap: 1rem;
     margin: 1rem;
-    border: 1px solid rgb(0 0 0 / 0.2);
     padding: 1rem;
 }
 
-legend {
-    padding: 0.5rem;
-    color: navy;
-    font-size: 1.3em;
-}
-
-label, input, button, select, textarea {
-    font-family: Reboto, Arial, sans-serif;
+/* Adicionando o contador para numerar as perguntas */
+form {
+    counter-reset: question;  /* Reseta o contador ao começar o formulário */
 }
 
 label {
-    text-align: right;
-    padding-right: 1rem;
+    position: relative;
+    padding-left: 2rem;  /* Deixa espaço para o número à esquerda */
+}
+
+label::before {
+    content: counter(question) ". ";  /* Adiciona o número antes do texto da pergunta */
+    counter-increment: question;  /* Incrementa o contador */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+    color: navy;
 }
 
 input, select, textarea {
     padding: 0.5rem;
     font-size: 1.1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 input[type="checkbox"] {
@@ -78,7 +85,7 @@ button {
 }
 
 button:hover {
-    background-color: darkgreen;
+    background-color: darkblue;
 }
 
 footer {
@@ -90,13 +97,19 @@ footer {
     border-top: 1px solid #ccc;
 }
 
+legend {
+    padding: 0.5rem;
+    color: navy;
+    font-size: 1em;
+}
+
 .form-item {
     display: grid;
     align-items: center;
 }
 
 .column1 {
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 1fr 2fr;
     margin: 0.5rem 0;
 }
 
