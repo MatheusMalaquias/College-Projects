@@ -4,6 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./Style/PollForm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <title>WDD 130 | HTML Form - User Poll</title>
 </head>
 
@@ -15,10 +19,14 @@
         <form>
             <fieldset>
                 <legend>Contact Information</legend>
-                <label for="fullname">Full Name:</label>
-                <input type="text" id="fullname" name="fullname">
-                <label for="useremail">Email:</label>
-                <input type="text" id="useremail" name="useremail">
+                <div class="form-item column2">
+                    <label for="fullname">Full Name:</label>
+                    <input type="text" id="fullname" name="fullname">
+                </div>
+                <div class="form-item column2">
+                    <label for="useremail">Email:</label>
+                    <input type="text" id="useremail" name="useremail">
+                </div>
             </fieldset>
             <fieldset>
                 <legend>Questions</legend>
