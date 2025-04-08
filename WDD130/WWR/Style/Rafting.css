@@ -38,7 +38,7 @@ main {
 .trip-table h2,
 .contact-form h2 {
   font-size: 3rem;
-  margin-top: 15px
+  margin-top: 15px;
   margin-bottom: 1rem;
   font-family: "Trade Winds", serif;
   color: var(--nature-brown);
@@ -178,7 +178,6 @@ input:focus {
 label {
   color: var(--nature-brown);
   font-size: 15px;
-  pointer-events: none;
   left: 5px;
   top: 10px;
   transition: 0.2s ease all;
@@ -221,7 +220,6 @@ input:focus ~ .bar:after {
   width: 100px;
   top: 25%;
   left: 0;
-  pointer-events: none;
   opacity: 0.5;
 }
 
@@ -414,7 +412,7 @@ input:focus ~ .highlight {
 }
 
 .hero-content h1{
-  color: var var(--nature-white);
+  color: var(--nature-white);
   font-size: 3rem;
   margin-bottom: 1rem;
   font-family: "Trade Winds", serif;
@@ -425,7 +423,7 @@ input:focus ~ .highlight {
   justify-content: space-around;
   align-items: center;
   margin-top: 2rem;
-  position: absolute
+  position: absolute;
 }
 
 .hero article img {
@@ -494,7 +492,7 @@ input:focus ~ .highlight {
 .Adventures__content {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px
+  gap: 20px;
 }
 
 .Adventures__content figure {
@@ -546,7 +544,7 @@ footer nav a img {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margim-bottom: 15px
+  margin-bottom: 15px;
   align-items: center;
   padding: 1rem;
 }
@@ -623,7 +621,7 @@ footer nav a img {
 
 .contact-form {
   width: 50%;
-  padding: 20px
+  padding: 20px;
 }
 
 
@@ -654,14 +652,14 @@ footer nav a img {
 
 .contact-form input[type="radio"],
 .contact-form input[type="checkbox"] {
-  margin: 20px 5px 
-  width: 20p;
+  margin: 20px 5px;
+  width: 20px;
   accent-color: var(--nature-brown);
 }
 
 .input-container-check{
   display: flex;
-  flex-direction: row
+  flex-direction: row;
 }
 
 /* Submit Button */
@@ -693,7 +691,7 @@ footer nav a img {
   width: 60%;
   height: 400px;
   display: flex;
-  flex-direction: column
+  flex-direction: column;
 
 }
 
@@ -704,7 +702,7 @@ footer nav a img {
 .trip__cta p {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: white
+  color: white;
 }
 
 .button {
