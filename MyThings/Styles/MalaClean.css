@@ -396,11 +396,11 @@
   }
   
   .hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgb(0, 53, 93);
     padding: 0 2rem;
     border-radius: 10px;
     width: 80%;
-    height: 60%;
+    height: 90%;
     position: relative;
   }
   
