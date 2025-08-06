@@ -1,0 +1,57 @@
+body {
+      background-color: #fefae0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    .shirt-container {
+      position: relative;
+      width: 300px;
+      aspect-ratio: 3/4;
+      margin-bottom: 20px;
+    }
+
+    .shirt {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .overlay-image {
+      position: absolute;
+      top: 100px;
+      left: 80px;
+      width: 100px;
+      height: 100px;
+      cursor: move;
+      border: 2px dashed #333;
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      width: 300px;
+    }
+
+    input, select, textarea, button {
+      padding: 8px;
+      font-size: 1rem;
+    }
+
+    button {
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
