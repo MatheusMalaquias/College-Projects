@@ -108,3 +108,79 @@ a.button {
   color: #fff;
   background: #005fcc;
 }
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center;     /* Centraliza verticalmente */
+  font-family: 'Be Vietnam Pro', sans-serif;
+  background-color: #f0f0f0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.personalizacao,
+.pedido {
+  flex: 1 1 300px;
+  max-width: 400px;
+}
+
+.personalizacao {
+  display: flex;
+  flex-direction: column;      /* elementos um embaixo do outro */
+  justify-content: center;     /* centraliza verticalmente */
+  align-items: center;         /* centraliza horizontalmente */
+  text-align: center;          /* centraliza o texto */
+  flex: 1 1 300px;
+  max-width: 500px;
+}
+
+.shirt-container {
+  position: relative;
+  display: flex;
+  justify-content: center;     /* centraliza a camisa */
+  align-items: center;         /* centraliza no eixo vertical */
+  width: 100%;
+  max-width: 300px;
+  margin-top: 1rem;
+}
+
+.shirt {
+  width: 100%;
+  display: block;
+}
+
+.overlay-image {
+  position: absolute;
+  top: 50%;    /* move para o centro vertical */
+  left: 50%;   /* move para o centro horizontal */
+  transform: translate(-50%, -50%); /* centraliza de fato */
+  width: 100px;
+  height: 100px;
+}
+
+/* ===== Cabeçalho e logo ===== */
+.site-header {
+  position: absolute;   /* Fixa no canto sem ocupar espaço do layout */
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.site-logo {
+  max-width: 120px;
+  height: auto;
+  cursor: pointer;
+}
