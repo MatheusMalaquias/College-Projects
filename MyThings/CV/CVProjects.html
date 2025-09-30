@@ -4,24 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfólio - Matheus O. Malaquias</title>
+  <!-- Devicon para ícones de linguagens -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="./Styles/CV.css">
 </head>
 <body>
   <!-- Header -->
   <header>
-      <img src="./Images/Malaquias.png" alt="Matheus O. Malaquias">
-      <h1>Matheus O. Malaquias</h1>
-      <nav class="header__navbar">
-        <a href="CV.html">Página Inicial</a>
-        <a href="CVAboutMe.html">Sobre mim</a>
-        <a href="CVProjects.html">Projetos</a>
-      </nav>
+    <img src="./Images/Malaquias.png" alt="Matheus O. Malaquias">
+    <h1>Matheus O. Malaquias</h1>
+    <nav class="header__navbar">
+      <a href="CV.html">Página Inicial</a>
+      <a href="CVAboutMe.html">Sobre mim</a>
+      <a href="CVProjects.html">Projetos</a>
+    </nav>
   </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Transformando ideias em soluções digitais</h1>
+    <p>Sou desenvolvedor com foco em criar aplicações eficientes e bem estruturadas
+      utilizando Python, C# e tecnologias web modernas.</p>
+  </section>
 
   <!-- Projetos -->
   <section id="projetos">
     <div class="projetos-grid">
-      
+
       <!-- Projeto 1 -->
       <div class="card">
         <div class="carousel">
@@ -42,10 +51,10 @@
       <div class="card">
         <div class="carousel">
           <div class="slides">
-            <img src="images/quiz1.png" alt="Página inicial do quiz">
-            <img src="images/quiz2.png" alt="Perguntas do quiz">
-            <img src="images/quiz3.png" alt="Resultado do quiz">
-            <img src="images/quiz4.png" alt="Resultado do quiz">
+            <img src="./Images/quiz1.png" alt="Página inicial do quiz">
+            <img src="./Images/quiz2.png" alt="Perguntas do quiz">
+            <img src="./Images/quiz3.png" alt="Resultado do quiz">
+            <img src="./Images/quiz4.png" alt="Resultado do quiz">
           </div>
         </div>
         <h3>Quiz Interativo</h3>
@@ -73,7 +82,29 @@
     </div>
   </section>
 
-  <footer>
+  <!-- Rodapé -->
+  <footer class="site-footer">
+    <!-- Linguagens -->
+    <div class="tech-footer">
+      <div class="tech-icons">
+        <i class="devicon-python-plain colored"></i>
+        <span>Python</span>
+      </div>
+      <div class="tech-icons">
+        <i class="devicon-html5-plain colored"></i>
+        <span>HTML</span>
+      </div>
+      <div class="tech-icons">
+        <i class="devicon-css3-plain colored"></i>
+        <span>CSS</span>
+      </div>
+      <div class="tech-icons">
+        <i class="devicon-csharp-plain colored"></i>
+        <span>C#</span>
+      </div>
+    </div>
+
+    <!-- Redes sociais -->
     <div class="social-links">
       <!-- GitHub -->
       <a href="https://github.com/MatheusMalaquias" target="_blank" aria-label="GitHub">
@@ -101,7 +132,6 @@
           .774 23.2 0 22.222 0h.003Z"/>
         </svg>
       </a>
-      
     </div>
   </footer>
 </body>
