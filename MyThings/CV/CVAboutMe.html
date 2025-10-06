@@ -3,33 +3,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sobre mim - Matheus O. Malaquias</title>
+  <title data-lang="pt">Sobre mim - Matheus O. Malaquias</title>
+  <title data-lang="en" style="display:none;">About me - Matheus O. Malaquias</title>
+
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="./Styles/CV.css">
+
+  <style>
+    /* Centralizar o seletor de idioma */
+    .language-switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .language-switch button {
+      background: none;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+      color: white;
+    }
+
+    .language-switch button:hover {
+      background-color: #eee;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <img src="./Images/Malaquias.png" alt="Matheus O. Malaquias">
     <h1>Matheus O. Malaquias</h1>
+
+    <!-- Seletor de idioma -->
+    <div class="language-switch">
+      <button onclick="setLanguage('pt')">🇧🇷 PT</button>
+      <button onclick="setLanguage('en')">🇺🇸 EN</button>
+    </div>
+
+    <br>
+
+    <!-- Menu de navegação -->
     <nav class="header__navbar">
-      <a href="CV.html">CV</a>
-      <a href="CVAboutMe.html">About me</a>
-      <a href="CVProjects.html">Projects</a>
+      <a href="CV.html" data-lang="pt">CV</a>
+      <a href="CV.html" data-lang="en" style="display:none;">Resume</a>
+
+      <a href="CVAboutMe.html" data-lang="pt">Sobre mim</a>
+      <a href="CVAboutMe.html" data-lang="en" style="display:none;">About me</a>
+
+      <a href="CVProjects.html" data-lang="pt">Projetos</a>
+      <a href="CVProjects.html" data-lang="en" style="display:none;">Projects</a>
     </nav>
   </header>
 
   <!-- Seção principal -->
   <section class="about-main">
-    <h2>Quem sou eu</h2>
-    <p>Sou um desenvolvedor apaixonado por tecnologia e programação. 
-       Gosto de transformar ideias em soluções digitais funcionais e eficientes.</p>
+    <h2 data-lang="pt">Quem sou eu</h2>
+    <h2 data-lang="en" style="display:none;">Who I am</h2>
+
+    <p data-lang="pt">
+      Sou um desenvolvedor apaixonado por tecnologia e programação. 
+      Gosto de transformar ideias em soluções digitais funcionais e eficientes.
+    </p>
+    <p data-lang="en" style="display:none;">
+      I'm a developer passionate about technology and programming.
+      I love turning ideas into functional and efficient digital solutions.
+    </p>
   </section>
 
-  <!-- Extra: espaço para você editar depois -->
+  <!-- Seção extra -->
   <section class="about-extra">
-    <h2>Mais sobre mim</h2>
-    <p>[Aqui você pode adicionar detalhes sobre sua trajetória, interesses ou visão de carreira.]</p>
+    <h2 data-lang="pt">Mais sobre mim</h2>
+    <h2 data-lang="en" style="display:none;">More about me</h2>
+
+    <p data-lang="pt">
+      Tenho interesse em desenvolvimento web, automação com Python e design de interfaces. 
+      Busco sempre aprender novas tecnologias e aprimorar minhas habilidades.
+    </p>
+    <p data-lang="en" style="display:none;">
+      I'm interested in web development, Python automation, and interface design. 
+      I'm always seeking to learn new technologies and improve my skills.
+    </p>
   </section>
 
   <!-- Rodapé -->
@@ -54,10 +112,8 @@
       </div>
     </div>
 
-    <!-- Redes sociais -->
     <div class="social-links">
-      <!-- GitHub -->
-      <a href="https://github.com/MatheusMalaquias" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/MatheusMalaquias" target="_blank" aria-label="GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
           <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.385 7.865 10.907.575.106.785-.25.785-.555 
           0-.274-.01-1.002-.015-1.966-3.2.696-3.878-1.542-3.878-1.542-.523-1.327-1.277-1.68-1.277-1.68-1.043-.713.08-.698.08-.698 
@@ -69,7 +125,6 @@
         </svg>
       </a>
 
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/matheus-otavio-malaquias/" target="_blank" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
           <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.039-1.852-3.039-1.853 
@@ -84,5 +139,8 @@
       </a>
     </div>
   </footer>
+
+  <!-- Script de idioma -->
+  <script src="./Scripts/language.js"></script>
 </body>
 </html>

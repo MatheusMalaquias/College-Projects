@@ -3,28 +3,73 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portfólio - Matheus O. Malaquias</title>
-  <!-- Devicon para ícones de linguagens -->
+  <title>Projetos - Matheus O. Malaquias</title>
+
+  <!-- Ícones das linguagens -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="./Styles/Projects.css">
+
+  <style>
+    /* Centralizar o seletor de idioma */
+    .language-switch {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .language-switch button {
+      background: none;
+      border: 1px solid #ccc;
+      margin: 0 5px;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-weight: 600;
+      color: white;
+    }
+
+    .language-switch button:hover {
+      background-color: #eee;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
   <header>
     <img src="./Images/Malaquias.png" alt="Matheus O. Malaquias">
     <h1>Matheus O. Malaquias</h1>
+
+    <!-- Seletor de idioma -->
+    <div class="language-switch">
+      <button onclick="setLanguage('pt')">🇧🇷 PT</button>
+      <button onclick="setLanguage('en')">🇺🇸 EN</button>
+    </div>
+
+    <br>
+
     <nav class="header__navbar">
-      <a href="CV.html">CV</a>
-      <a href="CVAboutMe.html">About me</a>
-      <a href="CVProjects.html">Projects</a>
+      <a href="CV.html" data-lang="pt">CV</a>
+      <a href="CV.html" data-lang="en" style="display:none;">Resume</a>
+
+      <a href="CVAboutMe.html" data-lang="pt">Sobre mim</a>
+      <a href="CVAboutMe.html" data-lang="en" style="display:none;">About me</a>
+
+      <a href="CVProjects.html" data-lang="pt">Projetos</a>
+      <a href="CVProjects.html" data-lang="en" style="display:none;">Projects</a>
     </nav>
   </header>
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>Transformando ideias em soluções digitais</h1>
-    <p>Sou desenvolvedor com foco em criar aplicações eficientes e bem estruturadas
-      utilizando Python, C# e tecnologias web modernas.</p>
+    <h1 data-lang="pt">Transformando ideias em soluções digitais</h1>
+    <h1 data-lang="en" style="display:none;">Transforming ideas into digital solutions</h1>
+
+    <p data-lang="pt">
+      Sou desenvolvedor com foco em criar aplicações eficientes e bem estruturadas utilizando Python, C# e tecnologias web modernas.
+    </p>
+    <p data-lang="en" style="display:none;">
+      I'm a developer focused on creating efficient, well-structured applications using Python, C#, and modern web technologies.
+    </p>
   </section>
 
   <!-- Projetos -->
@@ -35,50 +80,70 @@
       <div class="card">
         <div class="carousel">
           <div class="slides">
-            <img src="./Images/Page1.png" alt="Tela inicial do site de turismo">
-            <img src="./Images/Page2.png" alt="Página de reservas">
-            <img src="./Images/Page3.png" alt="Página de contato">
-            <img src="./Images/Page4.png" alt="Página de contato">
+            <img src="./Images/Page1.png" alt="">
+            <img src="./Images/Page2.png" alt="">
+            <img src="./Images/Page3.png" alt="">
+            <img src="./Images/Page4.png" alt="">
           </div>
         </div>
-        <h3>Website institucional de turismo</h3>
-        <p>Site responsivo em HTML/CSS para uma empresa fictícia de rafting.</p>
-        <a href="https://matheusmalaquias.github.io/wdd130/WWR/index.html" target="_blank">Ver Projeto</a>
-        <a href="https://github.com/MatheusMalaquias" target="_blank">Código</a>
+        <h3 data-lang="pt">Website institucional de turismo</h3>
+        <h3 data-lang="en" style="display:none;">Tourism institutional website</h3>
+
+        <p data-lang="pt">Site responsivo em HTML/CSS para uma empresa fictícia de rafting.</p>
+        <p data-lang="en" style="display:none;">Responsive HTML/CSS website for a fictional rafting company.</p>
+
+        <a href="https://matheusmalaquias.github.io/wdd130/WWR/index.html" target="_blank" data-lang="pt">Ver Projeto</a>
+        <a href="https://matheusmalaquias.github.io/wdd130/WWR/index.html" target="_blank" data-lang="en" style="display:none;">View Project</a>
+
+        <a href="https://github.com/MatheusMalaquias" target="_blank" data-lang="pt">Código</a>
+        <a href="https://github.com/MatheusMalaquias" target="_blank" data-lang="en" style="display:none;">Code</a>
       </div>
 
       <!-- Projeto 2 -->
       <div class="card">
         <div class="carousel">
           <div class="slides">
-            <img src="./Images/quiz1.png" alt="Página inicial do quiz">
-            <img src="./Images/quiz2.png" alt="Perguntas do quiz">
-            <img src="./Images/quiz3.png" alt="Resultado do quiz">
-            <img src="./Images/quiz4.png" alt="Resultado do quiz">
+            <img src="./Images/quiz1.png" alt="">
+            <img src="./Images/quiz2.png" alt="">
+            <img src="./Images/quiz3.png" alt="">
+            <img src="./Images/quiz4.png" alt="">
           </div>
         </div>
-        <h3>Quiz Interativo</h3>
-        <p>Formulário com validação e perguntas interativas em HTML/CSS.</p>
-        <a href="https://matheusmalaquias.github.io/wdd130/Week%205/Quiz.html" target="_blank">Ver Projeto</a>
-        <a href="https://github.com/MatheusMalaquias" target="_blank">Código</a>
+        <h3 data-lang="pt">Quiz Interativo</h3>
+        <h3 data-lang="en" style="display:none;">Interactive Quiz</h3>
+
+        <p data-lang="pt">Formulário com validação e perguntas interativas em HTML/CSS.</p>
+        <p data-lang="en" style="display:none;">Form with validation and interactive questions built in HTML/CSS.</p>
+
+        <a href="https://matheusmalaquias.github.io/wdd130/Week%205/Quiz.html" target="_blank" data-lang="pt">Ver Projeto</a>
+        <a href="https://matheusmalaquias.github.io/wdd130/Week%205/Quiz.html" target="_blank" data-lang="en" style="display:none;">View Project</a>
+
+        <a href="https://github.com/MatheusMalaquias" target="_blank" data-lang="pt">Código</a>
+        <a href="https://github.com/MatheusMalaquias" target="_blank" data-lang="en" style="display:none;">Code</a>
       </div>
 
       <!-- Projeto 3 -->
       <div class="card">
         <div class="carousel">
           <div class="slides">
-            <img src="./Images/Login.png" alt="Página inicial do portfólio">
-            <img src="./Images/Register.png" alt="Página de login">
-            <img src="./Images/Pers..png" alt="Página de personalização">
-            <img src="./Images/Login.png" alt="Página inicial do portfólio">
+            <img src="./Images/Login.png" alt="">
+            <img src="./Images/Register.png" alt="">
+            <img src="./Images/Pers..png" alt="">
+            <img src="./Images/Login.png" alt="">
           </div>
         </div>
-        <h3>Loja de personalização online</h3>
-        <p>Página de apresentação pessoal com navegação e customização.</p>
-        <a href="https://matheusmalaquias.github.io/College-Projects/MyThings/Julio's%20Stamparia/Login.html" target="_blank">Ver Projeto</a>
-        <a href="https://github.com/MatheusMalaquias" target="_blank">Código</a>
-      </div>
+        <h3 data-lang="pt">Loja de personalização online</h3>
+        <h3 data-lang="en" style="display:none;">Online customization store</h3>
 
+        <p data-lang="pt">Página de apresentação pessoal com navegação e customização.</p>
+        <p data-lang="en" style="display:none;">Personal portfolio page with navigation and customization options.</p>
+
+        <a href="https://matheusmalaquias.github.io/College-Projects/MyThings/Julio's%20Stamparia/Login.html" target="_blank" data-lang="pt">Ver Projeto</a>
+        <a href="https://matheusmalaquias.github.io/College-Projects/MyThings/Julio's%20Stamparia/Login.html" target="_blank" data-lang="en" style="display:none;">View Project</a>
+
+        <a href="https://github.com/MatheusMalaquias" target="_blank" data-lang="pt">Código</a>
+        <a href="https://github.com/MatheusMalaquias" target="_blank" data-lang="en" style="display:none;">Code</a>
+      </div>
     </div>
   </section>
 
@@ -104,10 +169,8 @@
       </div>
     </div>
 
-    <!-- Redes sociais -->
     <div class="social-links">
-      <!-- GitHub -->
-      <a href="https://github.com/MatheusMalaquias" target="_blank" aria-label="GitHub">
+        <a href="https://github.com/MatheusMalaquias" target="_blank" aria-label="GitHub">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
           <path d="M12 .5C5.648.5.5 5.648.5 12c0 5.086 3.292 9.385 7.865 10.907.575.106.785-.25.785-.555 
           0-.274-.01-1.002-.015-1.966-3.2.696-3.878-1.542-3.878-1.542-.523-1.327-1.277-1.68-1.277-1.68-1.043-.713.08-.698.08-.698 
@@ -119,7 +182,6 @@
         </svg>
       </a>
 
-      <!-- LinkedIn -->
       <a href="https://www.linkedin.com/in/matheus-otavio-malaquias/" target="_blank" aria-label="LinkedIn">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" viewBox="0 0 24 24">
           <path d="M20.451 20.451h-3.554v-5.569c0-1.328-.027-3.039-1.852-3.039-1.853 
@@ -134,5 +196,8 @@
       </a>
     </div>
   </footer>
+
+  <!-- Script de idioma -->
+  <script src="./Scripts/language.js"></script>
 </body>
 </html>
