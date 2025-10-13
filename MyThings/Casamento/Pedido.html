@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>O Jogo do Amor</title>
+  <style>
+    :root{--accent:#ff6b81;--muted:#9aa6b2}
+    *{box-sizing:border-box;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    html,body{height:100%;margin:0;}
+    body{
+      background:url('sua-foto.jpg') center/cover no-repeat fixed;
+      color:#fff;
+      backdrop-filter:brightness(0.6);
+    }
+
+    #preProposal {
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex: 1; /* ocupa o espaço total disponível dentro do wrap */
+    }
+    
+    .wrap{max-width:600px;margin:20px auto;padding:18px;background:rgba(0,0,0,0.6);border-radius:16px;box-shadow:0 6px 30px rgba(0,0,0,0.5)}
+    h1{font-size:22px;text-align:center}
+    p.lead{text-align:center;color:var(--muted)}
+    textarea{width:100%;min-height:80px;border-radius:8px;border:none;padding:10px;margin-top:10px;font-size:15px}
+    button{background:var(--accent);border:0;padding:10px 18px;border-radius:10px;color:white;font-weight:600;cursor:pointer;margin-top:12px}
+    .center{text-align:center}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div id="intro">
+      <h1>O Jogo do Amor 💖</h1>
+      <p class="lead">Você está pronta para jogar?</p>
+      <div class="center"><button id="startBtn">Começar</button></div>
+    </div>
+
+    <div id="quiz" class="hidden">
+      <div id="question"></div>
+      <div class="center"><button id="nextBtn">Próxima</button></div>
+    </div>
+
+    <div id="preProposal" class="hidden">
+      <p>Faltam 2 meses para 2026. <br>
+        E quero te perguntar uma coisa... <br>
+        Você gostaria de começar o ano de 2026 comigo? <br>
+        Não digo isso só por compartilhar o começo de um novo ano, mas porque eu adoraria que você fizesse parte dos meus dias, dos meus planos e das minhas metas. <br>
+        Eu gostaria de construir lembranças com você, rirmos de coisas bobas, nos apoiarmos nas dificuldades e celebrarmos juntos tudo de bonito que vier. <br>
+        Não é o fim, mas apenas o começo de uma eternidade juntos!</p>
+      <div class="center"><button id="goToProposal">Continuar 💍</button></div>
+    </div>
+
+    <div id="proposal" class="hidden center">
+      <h1>Quer casar comigo?</h1>
+      <div><button id="yesBtn">Sim ❤️</button> <button id="noBtn">Ainda não</button></div>
+    </div>
+
+    <div id="thanks" class="hidden center">
+      <h1>Sim ❤️</h1>
+      <p>E assim começa o resto das nossas vidas.</p>
+      <a href="Fotos.html">💝 Ver nossas lembranças</a>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      'Me fala duas coisas que você aprendeu/conheceu comigo e gostou.',
+      'O quanto sua vida mudou depois que passei a fazer parte dela?',
+      'Me faça uma pergunta que você sempre quis me fazer e nunca teve coragem.',
+      'Se eu perdesse minha memória o que me diria sobre nós?',
+      'Você tem alguma insegurança com relação a nós?'
+    ];
+
+    let index = 0;
+    const intro = document.getElementById('intro');
+    const quiz = document.getElementById('quiz');
+    const preProposal = document.getElementById('preProposal');
+    const proposal = document.getElementById('proposal');
+    const thanks = document.getElementById('thanks');
+    const qEl = document.getElementById('question');
+    const ans = document.getElementById('answer');
+
+    document.getElementById('startBtn').onclick = ()=>{
+      intro.classList.add('hidden');
+      quiz.classList.remove('hidden');
+      showQuestion();
+    };
+
+    function showQuestion(){
+      qEl.textContent = questions[index];
+      ans.value = '';
+    }
+
+    document.getElementById('nextBtn').onclick = ()=>{
+      index++;
+      if(index < questions.length){
+        showQuestion();
+      } else {
+        quiz.classList.add('hidden');
+        preProposal.classList.remove('hidden');
+      }
+    };
+
+    document.getElementById('goToProposal').onclick = ()=>{
+      preProposal.classList.add('hidden');
+      proposal.classList.remove('hidden');
+    };
+
+    document.getElementById('yesBtn').onclick = ()=>{
+      proposal.classList.add('hidden');
+      thanks.classList.remove('hidden');
+    };
+
+    document.getElementById('noBtn').onclick = ()=>{
+      alert('O amor tem o seu tempo — e o meu sempre será o seu.');
+    };
+
+    document.getElementById('restartBtn').onclick = ()=>{
+      index = 0;
+      thanks.classList.add('hidden');
+      intro.classList.remove('hidden');
+    };
+  </script>
+</body>
+</html>

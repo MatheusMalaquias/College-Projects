@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Nossas Lembranças 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Inter', system-ui, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: #000;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+    }
+
+    #slideshow {
+      position: relative;
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    #slideshow img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transform: scale(1);
+      transition: opacity 2s ease-in-out, transform 6s ease-in-out;
+    }
+
+    #slideshow img.active {
+      opacity: 1;
+      transform: scale(1.1); /* Ken Burns zoom suave */
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      font-size: 18px;
+      color: #ffe6f0;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .caption.show {
+      opacity: 1;
+    }
+
+    h1 {
+      font-size: 26px;
+      margin-top: 20px;
+      color: #ff9fb2;
+    }
+
+    p {
+      font-size: 16px;
+      max-width: 600px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="slideshow">
+    <img src="foto1.jpg" class="active" alt="Foto 1">
+    <img src="foto2.jpg" alt="Foto 2">
+    <img src="foto3.jpg" alt="Foto 3">
+    <img src="foto4.jpg" alt="Foto 4">
+    <div class="caption show">Nosso primeiro encontro 🍕</div>
+  </div>
+
+  <h1>Matheus & Gabriela 💍</h1>
+  <p>“Cada foto é uma lembrança de tudo o que já vivemos — e um lembrete de tudo o que ainda vamos construir juntos.”</p>
+
+  <script>
+    const slides = document.querySelectorAll('#slideshow img');
+    const caption = document.querySelector('.caption');
+    const captions = [
+      'Nosso primeiro encontro 🍕',
+      'A viagem dos nossos sonhos ✈️',
+      'Rindo de coisas bobas 😄',
+      'O começo da nossa eternidade 💍'
+    ];
+
+    let index = 0;
+
+    setInterval(() => {
+      slides[index].classList.remove('active');
+      caption.classList.remove('show');
+
+      index = (index + 1) % slides.length;
+
+      slides[index].classList.add('active');
+      caption.textContent = captions[index];
+
+      setTimeout(() => caption.classList.add('show'), 500);
+    }, 4000); // troca a cada 4 segundos
+  </script>
+</body>
+</html>
