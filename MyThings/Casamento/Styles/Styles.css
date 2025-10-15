@@ -1,32 +1,34 @@
+/* ===== Reset e base ===== */
 * {
     box-sizing: border-box;
     font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     background: #000;
     color: white;
-    overflow-x: hidden; /* evita scroll horizontal */
-    overflow-y: auto;   /* permite scroll vertical */
-    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
-    scroll-behavior: smooth;
     flex-direction: column;
+    scroll-behavior: smooth;
+    min-height: 100dvh; /* altura real da viewport, incluindo mobile */
 }
 
-/* Cada seção ocupa toda a tela */
+/* ===== Seções ===== */
 section {
     width: 100vw;
-    min-height: 100vh;
+    height: 100dvh; /* altura total da viewport em mobile e desktop */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    transition: opacity 1s ease-in-out;
     flex-shrink: 0;
     padding: 20px;
+    transition: opacity 1s ease-in-out;
 }
 
 #slideshow-section {
@@ -38,16 +40,16 @@ section {
     background: #111;
 }
 
-/* Slideshow */
+/* ===== Slideshow ===== */
 #slideshow {
-    width: 100%;
+    width: 90%;
     max-width: 800px;
-    height: 500px;
+    aspect-ratio: 4/3; /* mantém proporção */
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 0 40px rgba(255, 159, 178, 0.4);
-    margin-bottom: 20px;
     position: relative;
+    margin-bottom: 20px;
 }
 
 #slideshow img {
@@ -55,9 +57,9 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 16px;
     opacity: 0;
     transition: opacity 1.5s ease-in-out, transform 6s ease-in-out;
@@ -81,19 +83,21 @@ section {
     left: 50%;
     transform: translateX(-50%);
     width: 90%;
-    font-size: 18px;
+    font-size: 1rem;
     color: #ffe6f0;
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
+/* ===== Tipografia ===== */
 h1 {
-    font-size: clamp(22px, 5vw, 36px);
+    font-size: clamp(24px, 5vw, 36px);
     color: #ddd;
     margin: 10px 0;
 }
 
 h2 {
     font-size: clamp(20px, 4vw, 30px);
+    color: #ddd;
 }
 
 p {
@@ -103,6 +107,7 @@ p {
     line-height: 1.6;
 }
 
+/* ===== Botões ===== */
 button {
     margin-top: 20px;
     background: #fff;
@@ -120,7 +125,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-/* Botões de navegação fixos */
+/* ===== Botões de navegação ===== */
 .nav-btn {
     position: fixed;
     top: 50%;
@@ -146,38 +151,24 @@ button:hover {
     right: 20px;
 }
 
-/* ===== Correções específicas para mobile ===== */
+/* ===== Responsividade ===== */
 @media (max-width: 768px) {
 
-    body {
-        overflow-y: auto;
-        overflow-x: hidden;
-    }
-
     section {
-        padding: 10vh 6vw;
-    }
-
-    p {
-        text-align: center;
-        margin: 0 auto;
-        width: 90%;
-        font-size: 4vw;
-        line-height: 1.6;
+        padding: 10vh 5vw;
     }
 
     #slideshow {
-        width: 100%;
+        width: 95%;
         max-width: 95%;
-        height: auto;
-        aspect-ratio: 3/4; /* mantém proporção das imagens */
-        margin-bottom: 20px;
+        aspect-ratio: 3/4;
+        margin-bottom: 15px;
     }
 
     .nav-btn {
         font-size: 36px;
         top: 45%;
-        opacity: 0.8;
+        opacity: 0.9;
     }
 
     #prev {
@@ -191,13 +182,15 @@ button:hover {
     #play-btn {
         font-size: 28px;
         padding: 10px 16px;
-        position: relative;
-        bottom: 0;
     }
 
-    h1, h2 {
-        padding: 0 5vw;
+    h1, h2, p {
         text-align: center;
         word-wrap: break-word;
+    }
+
+    p {
+        font-size: 4vw;
+        width: 90%;
     }
 }
