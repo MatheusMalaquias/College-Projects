@@ -7,17 +7,18 @@ body {
     margin: 0;
     background: #000;
     color: white;
-    overflow-x: auto;
-    overflow-y: hidden;
+    overflow-x: hidden; /* evita scroll horizontal */
+    overflow-y: auto;   /* permite scroll vertical */
     height: 100vh;
     display: flex;
     scroll-behavior: smooth;
+    flex-direction: column;
 }
 
 /* Cada seção ocupa toda a tela */
 section {
-    min-width: 100vw;
-    height: 100vh;
+    width: 100vw;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,14 +40,14 @@ section {
 
 /* Slideshow */
 #slideshow {
-    position: relative;
-    width: 90%;
+    width: 100%;
     max-width: 800px;
     height: 500px;
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 0 40px rgba(255, 159, 178, 0.4);
     margin-bottom: 20px;
+    position: relative;
 }
 
 #slideshow img {
@@ -85,22 +86,21 @@ section {
     text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
 }
 
-
 h1 {
-  font-size: clamp(22px, 5vw, 36px);
-  color: #ddd;
-  margin: 10px 0;
+    font-size: clamp(22px, 5vw, 36px);
+    color: #ddd;
+    margin: 10px 0;
 }
 
 h2 {
-  font-size: clamp(20px, 4vw, 30px);
+    font-size: clamp(20px, 4vw, 30px);
 }
 
 p {
-  font-size: clamp(16px, 3.5vw, 20px);
-  max-width: 700px;
-  color: #ddd;
-  line-height: 1.6;
+    font-size: clamp(16px, 3.5vw, 20px);
+    max-width: 700px;
+    color: #ddd;
+    line-height: 1.6;
 }
 
 button {
@@ -116,102 +116,88 @@ button {
 }
 
 button:hover {
-      background: #ffe0e9;
-      transform: scale(1.05);
+    background: #ffe0e9;
+    transform: scale(1.05);
 }
 
 /* Botões de navegação fixos */
 .nav-btn {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  background: transparent; /* sem fundo/círculo */
-  border: none;            /* sem borda */
-  width: auto;             /* ajusta ao tamanho da seta */
-  height: auto;
-  font-size: 48px;         /* tamanho da seta */
-  color: #fff;             /* seta branca */
-  cursor: pointer;
-  z-index: 1000;
-  transition: 0.3s;
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    font-size: 48px;
+    color: #fff;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
 }
 
 .nav-btn:hover {
-  color: #ffe6e6;          /* opcional: muda cor ao passar o mouse */
+    color: #ffe6e6;
 }
 
 #prev {
-  left: 20px;
+    left: 20px;
 }
 
 #next {
-  right: 20px;
-}
-
-#slideshow {
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  overflow: hidden;
-  position: relative;
+    right: 20px;
 }
 
 /* ===== Correções específicas para mobile ===== */
 @media (max-width: 768px) {
 
-  body {
-    overflow-y: auto;
-    overflow-x: hidden;
-  }
+    body {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
 
-  section {
-    padding: 10vh 6vw;
-    text-align: center;
-  }
+    section {
+        padding: 10vh 6vw;
+    }
 
-  p {
-    text-align: center;
-    margin: 0 auto;
-    width: 90%;
-    font-size: 4vw;
-    line-height: 1.6;
-  }
+    p {
+        text-align: center;
+        margin: 0 auto;
+        width: 90%;
+        font-size: 4vw;
+        line-height: 1.6;
+    }
 
-  /* Centraliza o slideshow e ajusta o tamanho */
-  #slideshow {
-    width: 100%;
-    max-width: 95%;
-    aspect-ratio: 3/4;
-  }
+    #slideshow {
+        width: 100%;
+        max-width: 95%;
+        height: auto;
+        aspect-ratio: 3/4; /* mantém proporção das imagens */
+        margin-bottom: 20px;
+    }
 
-  /* Botões de navegação menores e centralizados verticalmente */
-  .nav-btn {
-    font-size: 36px;
-    top: 45%;
-    transform: translateY(-50%);
-    opacity: 0.8;
-  }
+    .nav-btn {
+        font-size: 36px;
+        top: 45%;
+        opacity: 0.8;
+    }
 
-  #prev {
-    left: 10px;
-  }
+    #prev {
+        left: 10px;
+    }
 
-  #next {
-    right: 10px;
-  }
+    #next {
+        right: 10px;
+    }
 
-  /* Botão play menor e centralizado */
-  #play-btn {
-    font-size: 28px;
-    padding: 10px 16px;
-    position: relative;
-    bottom: 0;
-  }
+    #play-btn {
+        font-size: 28px;
+        padding: 10px 16px;
+        position: relative;
+        bottom: 0;
+    }
 
-  /* Corrige textos que saem da tela */
-  h1, h2 {
-    padding: 0 5vw;
-    text-align: center;
-    word-wrap: break-word;
-  }
+    h1, h2 {
+        padding: 0 5vw;
+        text-align: center;
+        word-wrap: break-word;
+    }
 }
