@@ -28,10 +28,6 @@ section {
     padding: 20px;
 }
 
-#perguntas {
-    background: radial-gradient(circle at top, #ff9fb2 0%, #000 100%);
-}
-
 #slideshow-section {
     background: #000;
     position: relative;
@@ -39,10 +35,6 @@ section {
 
 #texto-final {
     background: #111;
-}
-
-#pedido {
-    background: radial-gradient(circle at center, #ff9fb2, #000);
 }
 
 /* Slideshow */
@@ -125,25 +117,36 @@ button:hover {
 
 /* Botões de navegação fixos */
 .nav-btn {
-    position: fixed;      /* Fixo na tela, não na seção */
-    top: 50%;             /* Central vertical */
-    transform: translateY(-50%);
-    background: rgba(255, 159, 178, 0.7);
-    border: none;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    font-size: 32px;
-    color: white;
-    cursor: pointer;
-    z-index: 1000;        /* Fica sempre acima das seções */
-    transition: 0.3s;
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent; /* sem fundo/círculo */
+  border: none;            /* sem borda */
+  width: auto;             /* ajusta ao tamanho da seta */
+  height: auto;
+  font-size: 48px;         /* tamanho da seta */
+  color: #fff;             /* seta branca */
+  cursor: pointer;
+  z-index: 1000;
+  transition: 0.3s;
 }
-    
-.nav-btn:hover {
-    background: rgba(255, 159, 178, 0.9);
-}
-    
-#prev { left: 20px; }
 
-#next { right: 20px; }
+.nav-btn:hover {
+  color: #ffe6e6;          /* opcional: muda cor ao passar o mouse */
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+#slideshow {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+}

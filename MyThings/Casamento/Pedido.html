@@ -13,19 +13,26 @@
   <button class="nav-btn" id="prev">←</button>
   <button class="nav-btn" id="next">→</button>
 
-  <!-- 🩷 Seção 1: Perguntas -->
+  <!-- 🩷 Seção 1: Apresentação -->
   <section id="perguntas">
     <h1>Gabriela... 💖</h1>
-    <p>Você lembra do dia em que nos conhecemos?</p>
-    <p>Das risadas, das conversas, e de como tudo começou?</p>
-    <p>De cada momento que vivemos juntos até aqui?</p>
-    <p>Então... quero te mostrar algo especial. 🥰</p>
   </section>
 
-  <!-- 🎞️ Seção 2: Slideshow -->
+  <!-- 🩷 Seção 2: Texto -->
+  <section id="perguntas">
+    <p>Faltam 2 meses para 2026...<br>
+      E quero te perguntar uma coisa...<br>
+      Você gostaria de começar o ano de 2026 comigo?<br>
+      Não digo isso só por compartilhar o começo de um novo ano, mas porque eu adoraria que você fizesse parte dos meus dias.<br>
+      E ainda não estamos tendo a retrospectiva do ano, mas quero relembrar algumas coisas que aconteceram conosco....<br>
+      Então...quero te mostrar algo especial. 🥰
+    </p>
+  </section>
+
+  <!-- 🎞️ Seção 3: Slideshow -->
   <section id="slideshow-section">
     <div id="slideshow">
-      <img src="./Images/Foto1.jpeg" class="active zoom-in" alt="Foto 1">
+      <img src="./Images/Foto1.jpeg" alt="Foto 1">
       <img src="./Images/Foto2.jpeg" alt="Foto 2">
       <img src="./Images/Foto3.jpeg" alt="Foto 3">
       <img src="./Images/Foto4.jpeg" alt="Foto 4">
@@ -33,24 +40,17 @@
       <img src="./Images/Foto6.jpeg" alt="Foto 6">
       <img src="./Images/Foto7.jpeg" alt="Foto 7">
       <img src="./Images/Foto8.jpeg" alt="Foto 8">
-      
+      <img src="./Images/Foto9.jpeg" alt="Foto 9">
+      <img src="./Images/Foto10.jpeg" alt="Foto 10"> 
+
       <div class="caption">Com esse sorriso você conquistou meu coração 😍...</div>
     </div>
 
-    <h1>Matheus & Gabriela 💖</h1>
-    <p>“Cada foto é uma lembrança de tudo o que já vivemos <br>
-      e um lembrete de tudo o que ainda vamos construir juntos.”</p>
-  </section>
+    <button id="play-btn">▶️</button>
 
-  <!-- 💌 Seção 3: Texto pré-pedido -->
-  <section id="texto-final">
-    <p>Faltam 2 meses para 2026...<br><br>
-      E quero te perguntar uma coisa...<br><br>
-      Você gostaria de começar o ano de 2026 comigo?<br><br>
-      Não digo isso só por compartilhar o começo de um novo ano, mas porque eu adoraria que você fizesse parte dos meus dias, dos meus planos e das minhas metas.<br><br>
-      Eu gostaria de construir lembranças com você, rirmos de coisas bobas, nos apoiarmos nas dificuldades e celebrarmos juntos tudo de bonito que vier.<br><br>
-      Não é o fim, mas apenas o começo de uma eternidade juntos! 💞
-    </p>
+    <h1>Matheus & Gabriela 💖</h1>
+    <p>Cada foto é uma lembrança de tudo o que já vivemos <br>
+      e um lembrete de tudo o que ainda vamos construir juntos.</p>
   </section>
 
   <!-- 💍 Seção 4: Pedido -->
@@ -59,49 +59,6 @@
     <h2>Você quer se casar comigo?</h2>
   </section>
 
-  <script>
-    // 🖼️ Slideshow
-    const slides = document.querySelectorAll('#slideshow img');
-    const caption = document.querySelector('.caption');
-    const captions = [
-      'Com esse sorriso você conquistou meu coração 😍...',
-      'Ainda me lembro de quando te vi pela primeira vez...',
-      'Do nosso primeiro encontro...',
-      'E do nosso primeiro beijo...',
-      'A primeira viagem que vivemos...',
-      'E o que aconteceu nela...',
-      'De quando fiquei longe...',
-      'Mas você me trouxe para perto...',
-      'O começo da nossa eternidade 💍'
-    ];
-
-    let index = 0;
-    setInterval(() => {
-      slides[index].classList.remove('active', 'zoom-in', 'zoom-out');
-      index = (index + 1) % slides.length;
-      const zoomEffect = index % 2 === 0 ? 'zoom-in' : 'zoom-out';
-      slides[index].classList.add('active', zoomEffect);
-      caption.textContent = captions[index];
-    }, 5000);
-
-    // Navegação entre seções
-    const sections = document.querySelectorAll('section');
-    let currentSection = 0;
-
-    const scrollToSection = (i) => {
-      sections[i].scrollIntoView({ behavior: 'smooth' });
-    };
-
-    document.getElementById('next').addEventListener('click', () => {
-      if (currentSection < sections.length - 1) currentSection++;
-      scrollToSection(currentSection);
-    });
-
-    document.getElementById('prev').addEventListener('click', () => {
-      if (currentSection > 0) currentSection--;
-      scrollToSection(currentSection);
-    });
-  </script>
-  </script>
+  <script src="./Scripts/Pedido.js"></script>
 </body>
 </html>
