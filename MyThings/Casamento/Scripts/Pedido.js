@@ -3,7 +3,7 @@ const caption = document.querySelector('.caption');
 const playBtn = document.getElementById('play-btn');
 
 const captions = [
-  '',
+  '   ',
   'Com esse sorriso você conquistou meu coração 😍...',
   'Daí eu tive a oportunidade de vê-la pessoalmente...',
   'Ter um primeiro encontro...',
