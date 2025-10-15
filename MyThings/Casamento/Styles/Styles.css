@@ -156,23 +156,62 @@ button:hover {
   position: relative;
 }
 
-/* 📱 Responsividade para celular */
+/* ===== Correções específicas para mobile ===== */
 @media (max-width: 768px) {
-  #slideshow {
-    width: 100%;
-    aspect-ratio: 3 / 4;
-  }
 
   body {
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
+  section {
+    padding: 10vh 6vw;
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+    font-size: 4vw;
+    line-height: 1.6;
+  }
+
+  /* Centraliza o slideshow e ajusta o tamanho */
+  #slideshow {
+    width: 100%;
+    max-width: 95%;
+    aspect-ratio: 3/4;
+  }
+
+  /* Botões de navegação menores e centralizados verticalmente */
   .nav-btn {
-    top: auto;
-    bottom: 20px;
-    font-size: 32px;
+    font-size: 36px;
+    top: 45%;
+    transform: translateY(-50%);
+    opacity: 0.8;
   }
 
-  #prev { left: 20%; }
-  #next { right: 20%; }
+  #prev {
+    left: 10px;
+  }
+
+  #next {
+    right: 10px;
+  }
+
+  /* Botão play menor e centralizado */
+  #play-btn {
+    font-size: 28px;
+    padding: 10px 16px;
+    position: relative;
+    bottom: 0;
+  }
+
+  /* Corrige textos que saem da tela */
+  h1, h2 {
+    padding: 0 5vw;
+    text-align: center;
+    word-wrap: break-word;
+  }
 }
