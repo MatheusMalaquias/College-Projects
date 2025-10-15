@@ -1,4 +1,4 @@
-/* ===== Base ===== */
+/* ===== Reset e base ===== */
 * {
     box-sizing: border-box;
     font-family: 'Inter', system-ui, sans-serif;
@@ -9,11 +9,11 @@
 body {
     background: #000;
     color: white;
-    overflow-x: auto;
-    overflow-y: hidden;
     scroll-behavior: smooth;
     display: flex;
-    flex-direction: row;
+    flex-direction: row; /* horizontal no desktop */
+    overflow-x: auto;
+    overflow-y: hidden;
     height: 100dvh;
     width: 100vw;
 }
@@ -118,11 +118,11 @@ button:hover {
 #prev { left: 20px; }
 #next { right: 20px; }
 
-/* ===== Responsividade ===== */
+/* ===== Responsividade Mobile ===== */
 @media (max-width: 768px) {
 
     body {
-        flex-direction: column; /* muda scroll para vertical no mobile */
+        flex-direction: column; /* rola verticalmente no mobile */
         overflow-x: hidden;
         overflow-y: auto;
     }
@@ -138,7 +138,7 @@ button:hover {
         width: 95%;
         max-width: 95%;
         height: auto;
-        aspect-ratio: auto; /* remove proporção fixa */
+        aspect-ratio: auto;
         margin-bottom: 20px;
     }
 
