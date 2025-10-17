@@ -13,7 +13,11 @@ const captions = [
   'Ficamos longe por um tempo...',
   'Mas sempre me trouxe para perto...',
   'E foi no mesmo lugar, aonde tudo começou...',
-  'Que tive a certeza que queria você por toda a eternidade...'
+  'Que tive a certeza que queria você por toda a eternidade...',
+  'Sei o quanto sou imperfeito...',
+  'E o quanto preciso melhorar...',
+  'Mas quero fazer isso com e por você...',
+  'Não é o fim, mas o começo de uma eternidade juntos!!'
 ];
 
 let index = 0;
