@@ -3,7 +3,7 @@ const caption = document.querySelector('.caption');
 const playBtn = document.getElementById('play-btn');
 
 const captions = [
-  '',
+  'Cada foto é uma lembrança de tudo o que já vivemos e um lembrete de tudo o que ainda vamos construir juntos.',
   'Com esse sorriso você conquistou meu coração 😍...',
   'Daí eu tive a oportunidade de vê-la pessoalmente...',
   'Ter um primeiro encontro...',
