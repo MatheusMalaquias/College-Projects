@@ -69,3 +69,7 @@ mostrarImagem()
 setInterval(mostrarImagem,3000)
 
 })
+
+window.addEventListener("click", () => {
+    document.getElementById("musica").play();
+});
