@@ -1,5 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+    const musica = document.getElementById("musica");
+
+    document.body.addEventListener("click", function () {
+        if (musica && musica.paused) {
+            musica.play();
+        }
+
 /* CONTADOR */
 
 const inicio = new Date("2025-01-25T00:00:00")
