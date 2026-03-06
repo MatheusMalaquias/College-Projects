@@ -1,80 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-const musica = document.getElementById("musica");
-
-function tocarMusica(){
-
-if(musica){
-musica.play().catch(() => {});
-}
-
-document.removeEventListener("click", tocarMusica);
-
-}
-
-document.addEventListener("click", tocarMusica);
-
-
 /* CONTADOR */
 
-const inicio = new Date("2025-01-25T00:00:00");
+const inicio = new Date("2025-01-25T00:00:00")
 
 function atualizarTempo(){
 
-const agora = new Date();
+const agora = new Date()
 
-let anos = agora.getFullYear() - inicio.getFullYear();
-let meses = agora.getMonth() - inicio.getMonth();
-let dias = agora.getDate() - inicio.getDate();
+let anos = agora.getFullYear() - inicio.getFullYear()
+let meses = agora.getMonth() - inicio.getMonth()
+let dias = agora.getDate() - inicio.getDate()
 
 if(dias < 0){
-meses--;
-dias += 30;
+meses--
+dias += 30
 }
 
 if(meses < 0){
-anos--;
-meses += 12;
+anos--
+meses += 12
 }
 
-const diff = agora - inicio;
+const diff = agora - inicio
 
-const horas = Math.floor((diff/(1000*60*60))%24);
-const minutos = Math.floor((diff/(1000*60))%60);
-const segundos = Math.floor((diff/1000)%60);
+const horas = Math.floor((diff / (1000*60*60)) % 24)
+const minutos = Math.floor((diff / (1000*60)) % 60)
+const segundos = Math.floor((diff / 1000) % 60)
 
-document.getElementById("tempo").innerHTML =
-anos+" anos • "+
-meses+" meses • "+
-dias+" dias<br>"+
-horas+" horas • "+
-minutos+" minutos • "+
-segundos+" segundos";
+const elemento = document.getElementById("tempo")
+
+if(elemento){
+elemento.innerHTML =
+anos + " anos • " +
+meses + " meses • " +
+dias + " dias<br>" +
+horas + " horas • " +
+minutos + " minutos • " +
+segundos + " segundos"
+}
 
 }
 
-atualizarTempo();
-setInterval(atualizarTempo,1000);
+atualizarTempo()
+setInterval(atualizarTempo,1000)
 
 
 /* SLIDESHOW */
 
-const imagens = document.querySelectorAll("#slideshow img");
+let imagens = document.querySelectorAll("#slideshow img")
+let index = 0
 
-let index = 0;
+function mostrarImagem(){
 
-setInterval(()=>{
+imagens.forEach(img => img.classList.remove("active"))
 
-imagens[index].classList.remove("active");
+imagens[index].classList.add("active")
 
-index++;
+index++
 
 if(index >= imagens.length){
-index = 0;
+index = 0
 }
 
-imagens[index].classList.add("active");
+}
 
-},3000);
+mostrarImagem()
+setInterval(mostrarImagem,3000)
 
-});
+})
