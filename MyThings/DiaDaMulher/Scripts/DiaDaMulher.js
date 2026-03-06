@@ -1,85 +1,71 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* MUSICA */
+/* CONTADOR */
 
-    const musica = document.getElementById("musica");
+const inicio = new Date("2025-01-25T00:00:00")
 
-    if (musica) {
-        musica.volume = 0.5; // volume opcional
-    }
+function atualizarTempo(){
 
-    // desbloqueia áudio ao clicar na página
-    window.addEventListener("click", function () {
-        if (musica) {
-            musica.play();
-        }
-    });
+const agora = new Date()
 
-    /* CONTADOR */
+let anos = agora.getFullYear() - inicio.getFullYear()
+let meses = agora.getMonth() - inicio.getMonth()
+let dias = agora.getDate() - inicio.getDate()
 
-    const inicio = new Date("2025-01-25T00:00:00");
+if(dias < 0){
+meses--
+dias += 30
+}
 
-    function atualizarTempo() {
+if(meses < 0){
+anos--
+meses += 12
+}
 
-        const agora = new Date();
+const diff = agora - inicio
 
-        let anos = agora.getFullYear() - inicio.getFullYear();
-        let meses = agora.getMonth() - inicio.getMonth();
-        let dias = agora.getDate() - inicio.getDate();
+const horas = Math.floor((diff / (1000*60*60)) % 24)
+const minutos = Math.floor((diff / (1000*60)) % 60)
+const segundos = Math.floor((diff / 1000) % 60)
 
-        if (dias < 0) {
-            meses--;
-            dias += 30;
-        }
+const elemento = document.getElementById("tempo")
 
-        if (meses < 0) {
-            anos--;
-            meses += 12;
-        }
+if(elemento){
+elemento.innerHTML =
+anos + " anos • " +
+meses + " meses • " +
+dias + " dias<br>" +
+horas + " horas • " +
+minutos + " minutos • " +
+segundos + " segundos"
+}
 
-        const diff = agora - inicio;
+}
 
-        const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
-        const minutos = Math.floor((diff / (1000 * 60)) % 60);
-        const segundos = Math.floor((diff / 1000) % 60);
-
-        const elemento = document.getElementById("tempo");
-
-        if (elemento) {
-            elemento.innerHTML =
-                anos + " anos • " +
-                meses + " meses • " +
-                dias + " dias<br>" +
-                horas + " horas • " +
-                minutos + " minutos • " +
-                segundos + " segundos";
-        }
-    }
-
-    atualizarTempo();
-    setInterval(atualizarTempo, 1000);
+atualizarTempo()
+setInterval(atualizarTempo,1000)
 
 
-    /* SLIDESHOW */
+/* SLIDESHOW */
 
-    let imagens = document.querySelectorAll("#slideshow img");
-    let index = 0;
+let imagens = document.querySelectorAll("#slideshow img")
+let index = 0
 
-    function mostrarImagem() {
+function mostrarImagem(){
 
-        imagens.forEach(img => img.classList.remove("active"));
+imagens.forEach(img => img.classList.remove("active"))
 
-        imagens[index].classList.add("active");
+imagens[index].classList.add("active")
 
-        index++;
+index++
 
-        if (index >= imagens.length) {
-            index = 0;
-        }
+if(index >= imagens.length){
+index = 0
+}
 
-    }
+}
 
-    mostrarImagem();
-    setInterval(mostrarImagem, 3000);
+mostrarImagem()
+setInterval(mostrarImagem,3000)
 
-});
+})
