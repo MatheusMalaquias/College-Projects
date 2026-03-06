@@ -2,51 +2,50 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body{
+    font-family:Arial, Helvetica, sans-serif;
     background:#111;
     color:white;
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-    padding:20px;
 }
-
-/* CONTAINER PRINCIPAL */
 
 .container{
     display:flex;
+    width:90%;
     max-width:1200px;
-    width:100%;
     gap:40px;
 }
 
-/* LADO ESQUERDO (SLIDESHOW) */
-
 .left{
     flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 #slideshow{
     position:relative;
     width:100%;
+    max-width:500px;
 }
 
 #slideshow img{
+    position:absolute;
     width:100%;
     height:auto;
-    display:none;
+    opacity:0;
+    transition:opacity 1s;
     border-radius:10px;
 }
 
 #slideshow img.active{
-    display:block;
+    opacity:1;
 }
-
-/* LADO DIREITO */
 
 .right{
     flex:1;
@@ -61,39 +60,62 @@ h1{
 }
 
 .mensagem{
-    font-size:16px;
+    font-size:18px;
     line-height:1.6;
-    margin-bottom:30px;
+    margin-bottom:20px;
 }
 
-/* CONTADOR */
-
 .contador{
-    font-size:20px;
+    font-size:22px;
 }
 
 .tempo{
     margin-top:10px;
-    font-size:18px;
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVO CELULAR */
 
-/* AJUSTE PARA CELULAR EM MODO HORIZONTAL */
+@media (max-width: 900px){
 
-@media (max-width: 900px) and (orientation: landscape){
+.container{
+    flex-direction:column;
+    gap:20px;
+    width:95%;
+}
+
+#slideshow{
+    max-width:100%;
+}
+
+#slideshow img{
+    position:relative;
+}
+
+h1{
+    font-size:22px;
+}
+
+.mensagem{
+    font-size:14px;
+}
+
+.contador{
+    font-size:16px;
+}
+
+.tempo{
+    font-size:14px;
+}
+
+}
+
+/* CELULAR DEITADO */
+
+@media (max-width:900px) and (orientation:landscape){
 
 .container{
     flex-direction:row;
     gap:20px;
-}
-
-.left{
-    flex:1;
-}
-
-.right{
-    flex:1;
 }
 
 #slideshow img{
@@ -107,15 +129,10 @@ h1{
 
 .mensagem{
     font-size:13px;
-    line-height:1.4;
 }
 
 .contador{
-    font-size:16px;
-}
-
-.tempo{
-    font-size:14px;
+    font-size:15px;
 }
 
 }
