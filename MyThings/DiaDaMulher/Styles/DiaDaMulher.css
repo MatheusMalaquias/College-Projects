@@ -79,36 +79,43 @@ h1{
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 900px){
+/* AJUSTE PARA CELULAR EM MODO HORIZONTAL */
+
+@media (max-width: 900px) and (orientation: landscape){
 
 .container{
-    flex-direction:column;
-    align-items:center;
-    text-align:center;
+    flex-direction:row;
+    gap:20px;
 }
 
 .left{
-    width:100%;
+    flex:1;
 }
 
 .right{
-    width:100%;
+    flex:1;
+}
+
+#slideshow img{
+    max-height:70vh;
+    object-fit:contain;
 }
 
 h1{
-    font-size:26px;
+    font-size:20px;
 }
 
 .mensagem{
-    font-size:15px;
+    font-size:13px;
+    line-height:1.4;
 }
 
 .contador{
-    font-size:18px;
+    font-size:16px;
 }
 
 .tempo{
-    font-size:16px;
+    font-size:14px;
 }
 
 }
