@@ -3,9 +3,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const musica = document.getElementById("musica");
 
     function tocarMusica() {
-        if (musica && musica.paused) {
-            musica.play();
+        if (musica) {
+            musica.play().catch(function() {
+                console.log("O navegador bloqueou o autoplay.");
+            });
         }
+
         document.removeEventListener("click", tocarMusica);
     }
 
