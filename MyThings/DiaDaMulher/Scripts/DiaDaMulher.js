@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    /* MUSICA */
-
     const musica = document.getElementById("musica");
 
-    document.body.addEventListener("click", function () {
+    function tocarMusica() {
         if (musica && musica.paused) {
             musica.play();
         }
-    });
+        document.removeEventListener("click", tocarMusica);
+    }
+
+    document.addEventListener("click", tocarMusica);
 
 
     /* CONTADOR */
