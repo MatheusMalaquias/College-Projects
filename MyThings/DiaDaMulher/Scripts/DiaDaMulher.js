@@ -1,75 +1,85 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-/* CONTADOR */
+    /* MUSICA */
 
-const inicio = new Date("2025-01-25T00:00:00")
+    const musica = document.getElementById("musica");
 
-function atualizarTempo(){
+    if (musica) {
+        musica.volume = 0.5; // volume opcional
+    }
 
-const agora = new Date()
+    // desbloqueia áudio ao clicar na página
+    window.addEventListener("click", function () {
+        if (musica) {
+            musica.play();
+        }
+    });
 
-let anos = agora.getFullYear() - inicio.getFullYear()
-let meses = agora.getMonth() - inicio.getMonth()
-let dias = agora.getDate() - inicio.getDate()
+    /* CONTADOR */
 
-if(dias < 0){
-meses--
-dias += 30
-}
+    const inicio = new Date("2025-01-25T00:00:00");
 
-if(meses < 0){
-anos--
-meses += 12
-}
+    function atualizarTempo() {
 
-const diff = agora - inicio
+        const agora = new Date();
 
-const horas = Math.floor((diff / (1000*60*60)) % 24)
-const minutos = Math.floor((diff / (1000*60)) % 60)
-const segundos = Math.floor((diff / 1000) % 60)
+        let anos = agora.getFullYear() - inicio.getFullYear();
+        let meses = agora.getMonth() - inicio.getMonth();
+        let dias = agora.getDate() - inicio.getDate();
 
-const elemento = document.getElementById("tempo")
+        if (dias < 0) {
+            meses--;
+            dias += 30;
+        }
 
-if(elemento){
-elemento.innerHTML =
-anos + " anos • " +
-meses + " meses • " +
-dias + " dias<br>" +
-horas + " horas • " +
-minutos + " minutos • " +
-segundos + " segundos"
-}
+        if (meses < 0) {
+            anos--;
+            meses += 12;
+        }
 
-}
+        const diff = agora - inicio;
 
-atualizarTempo()
-setInterval(atualizarTempo,1000)
+        const horas = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutos = Math.floor((diff / (1000 * 60)) % 60);
+        const segundos = Math.floor((diff / 1000) % 60);
+
+        const elemento = document.getElementById("tempo");
+
+        if (elemento) {
+            elemento.innerHTML =
+                anos + " anos • " +
+                meses + " meses • " +
+                dias + " dias<br>" +
+                horas + " horas • " +
+                minutos + " minutos • " +
+                segundos + " segundos";
+        }
+    }
+
+    atualizarTempo();
+    setInterval(atualizarTempo, 1000);
 
 
-/* SLIDESHOW */
+    /* SLIDESHOW */
 
-let imagens = document.querySelectorAll("#slideshow img")
-let index = 0
+    let imagens = document.querySelectorAll("#slideshow img");
+    let index = 0;
 
-function mostrarImagem(){
+    function mostrarImagem() {
 
-imagens.forEach(img => img.classList.remove("active"))
+        imagens.forEach(img => img.classList.remove("active"));
 
-imagens[index].classList.add("active")
+        imagens[index].classList.add("active");
 
-index++
+        index++;
 
-if(index >= imagens.length){
-index = 0
-}
+        if (index >= imagens.length) {
+            index = 0;
+        }
 
-}
+    }
 
-mostrarImagem()
-setInterval(mostrarImagem,3000)
+    mostrarImagem();
+    setInterval(mostrarImagem, 3000);
 
-})
-
-window.addEventListener("click", () => {
-    document.getElementById("musica").play();
 });
